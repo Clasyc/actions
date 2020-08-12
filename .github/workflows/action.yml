@@ -49,5 +49,9 @@ jobs:
 
       - name: Print nginx log
         if: ${{ always() }}
-        run: docker exec nginx cat /var/log/nginx/api.skicms.log
+        run: docker exec nginx ls /var/log/nginx
+
+      - name: Print html ls
+        if: ${{ always() }}
+        run: docker exec nginx ls /usr/share/nginx.conf/html
 
