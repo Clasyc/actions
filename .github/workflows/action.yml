@@ -55,3 +55,7 @@ jobs:
         if: ${{ always() }}
         run: docker exec nginx ls /usr/share/nginx.conf/html
 
+      - name: Print ls
+        if: ${{ always() }}
+        run: ls ${{ github.workspace }}/html
+
