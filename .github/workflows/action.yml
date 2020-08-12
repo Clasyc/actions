@@ -26,7 +26,7 @@ jobs:
         ports:
           - 8080:8080
         # add docker volume
-        options: --name nginx
+        options: -v ${{ github.workspace }}/html:/usr/share/nginx.conf/html -v ${{ github.workspace }}/config:/etc/nginx/conf.d --name nginx
 
     steps:
       - name: Allow runner as root
