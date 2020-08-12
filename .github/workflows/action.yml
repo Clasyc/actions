@@ -48,6 +48,6 @@ jobs:
         run: curl localhost:8080
 
       - name: Print nginx log
-          if: ${{ always() }}
-          run: docker exec nginx cat /var/log/nginx/api.skicms.log
+        if: ${{ always() }}
+        run: docker exec nginx cat /var/log/nginx/api.skicms.log
 
