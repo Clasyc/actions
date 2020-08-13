@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/share/nginx.conf/html
+    links:
+      - postgres
+  nginx:
+    image: nginx
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
+    volumes_from:
+      - api
+    ports:
+      - "8080:8080"
+    links:
+      - api
+  postgres:
+    image: postgres
+    volumes:
+      - ./postgres:/var/www/postgres
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
