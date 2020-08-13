@@ -47,8 +47,12 @@ jobs:
           php-version: 7.1
           extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, pgsql
 
+      - name: Set environment variables
+        run: |
+          echo "::set-env name=APP_IP::$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}')"
+
       - name: Curl test
-        run: curl localhost:${{ job.services.nginx.ports['8080'] }}
+        run: curl http://${{APP_IP}}:${{ job.services.nginx.ports['8080'] }}
 
       - name: Print nginx log
         if: ${{ always() }}
