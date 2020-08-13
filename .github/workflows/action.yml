@@ -51,10 +51,6 @@ jobs:
         if: ${{ always() }}
         run: docker exec nginx ls /var/log/nginx
 
-      - name: Print nginx log 2
-        if: ${{ always() }}
-        run: docker exec nginx cat /var/log/nginx/error.log
-
       - name: Print html ls
         if: ${{ always() }}
         run: docker exec nginx ls /usr/share/nginx.conf/html
