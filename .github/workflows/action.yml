@@ -25,4 +25,4 @@ jobs:
         run: docker-compose up -d
 
       - name: Curl test
-        run: curl localhost:8080
+        run: curl 127.0.0.1:8080
