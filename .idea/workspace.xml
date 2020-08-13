@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a89c32cb-985c-4fde-a91a-34c8967e52d3" name="Default Changelist" comment="" />
+    <list default="true" id="a89c32cb-985c-4fde-a91a-34c8967e52d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/nginx.conf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597222359295</updated>
-      <workItem from="1597222360344" duration="14855000" />
+      <workItem from="1597222360344" duration="15157000" />
     </task>
     <servers />
   </component>

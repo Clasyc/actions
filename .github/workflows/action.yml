@@ -32,5 +32,8 @@ jobs:
       - name: Services
         run: docker ps
 
+      - name: Exec
+        run: docker exec actions_nginx_1 ls /etc/nginx/conf.d
+
       - name: Curl test
         run: curl 127.0.0.1:8080
