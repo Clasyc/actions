@@ -27,9 +27,6 @@ jobs:
       - name: Services
         run: docker ps
 
-      - name: Workdir
-        run: ${{ github.workspace }}
-
       - name: Exec
         run: docker exec actions_nginx_1 ls /etc/nginx/conf.d
 
