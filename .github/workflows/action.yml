@@ -1,0 +1,72 @@
+name: PHP tests on Postgres
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  run:
+    name: PHP 7.2 Test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: root
+          POSTGRES_DB: skicms_test
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      nginx:
+        image: nginx
+        ports:
+          - 8080:8080
+        # add docker volume
+        options: --name nginx
+        volumes:
+          - ${{ github.workspace }}/html:/usr/share/nginx.conf/html
+          - ${{ github.workspace }}/config:/etc/nginx/conf.d
+
+    steps:
+      - name: Allow runner as root
+        run: export RUNNER_ALLOW_RUNASROOT=1
+
+      - name: Update permission
+        run: sudo chown -R $USER:$USER ${{ github.workspace }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart nginx
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.1
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, pgsql
+
+      - name: Curl test
+        run: curl http://localhost:${{ job.services.nginx.ports['8080'] }}
+
+      - name: Print nginx log
+        if: ${{ always() }}
+        run: docker exec nginx ls /var/log/nginx
+
+      - name: Print html ls
+        if: ${{ always() }}
+        run: docker exec nginx ls /usr/share/nginx.conf/html
+
+      - name: Print ls
+        if: ${{ always() }}
+        run: ls ${{ github.workspace }}/html
+
+      - name: Print ls 2
+        if: ${{ always() }}
+        run: docker exec nginx ls /etc/nginx/conf.d
