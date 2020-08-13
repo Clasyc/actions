@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/usr/share/nginx.conf/html
+      - /home/runner/work/actions/actions/html:/usr/share/nginx.conf/html
     links:
       - postgres
   nginx:
     image: nginx
     volumes:
-      - ./config/nginx:/etc/nginx/conf.d
+      - /home/runner/work/actions/actions/config/nginx:/etc/nginx/conf.d
     volumes_from:
       - api
     ports:

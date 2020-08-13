@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a89c32cb-985c-4fde-a91a-34c8967e52d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/action.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a89c32cb-985c-4fde-a91a-34c8967e52d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597222359295</updated>
-      <workItem from="1597222360344" duration="15977000" />
+      <workItem from="1597222360344" duration="16347000" />
     </task>
     <servers />
   </component>
@@ -68,9 +65,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2810" y="333" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597233657792">
+    <state x="2810" y="333" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597322671543">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2810" y="333" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.51.1853.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1597233657792" />
+    <state x="2810" y="333" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.51.1853.1053/1920.0.2560.1440@1920.0.2560.1440" timestamp="1597322671543" />
   </component>
 </project>
