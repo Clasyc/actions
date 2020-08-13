@@ -25,7 +25,7 @@ jobs:
         run: docker-compose up -d
 
       - name: Services
-        runa: docker ps
+        run: docker ps
 
       - name: Curl test
         run: curl 127.0.0.1:8080
