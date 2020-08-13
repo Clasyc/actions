@@ -24,13 +24,11 @@ jobs:
       - name: Run docker compose up
         run: docker-compose up -d
 
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
-
       - name: Services
         run: docker ps
+
+      - name: Workdir
+        run: ${{ github.workspace }}
 
       - name: Exec
         run: docker exec actions_nginx_1 ls /etc/nginx/conf.d

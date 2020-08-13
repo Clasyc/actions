@@ -21,8 +21,6 @@ services:
       - api
   postgres:
     image: postgres
-    volumes:
-      - ./postgres:/var/www/postgres
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
